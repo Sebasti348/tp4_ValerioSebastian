@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 class="d-flex justify-content-center">Formulario Docente</h1>
+	
+	<div class="d-flex justify-content-center">
+		<form>
+			<div class="col	" >
+				<label for="legajo" class="form-label"> Legajo </label> <input
+					type="number" class="form-control" id="legajo"
+					aria-describedby="legajo">
+
+			</div>
+			<div class="col">
+				<label for="nombre" class="form-label">Nombre Completo</label> 
+				<input	type="text" class="form-control" id="nombre" aria-describedby="nombre">
+
+			</div>
+			<div class="col">
+				<label for="apellido" class="form-label">Apellidos</label> <input
+					type="text" class="form-control" id="apellido"
+					aria-describedby="apellido">
+
+			</div>
+			<div class="col">
+				<label for="email" class="form-label">Email </label> <input
+					type="email" class="form-control" id="email"
+					aria-describedby="email">
+
+			</div>
+			<div class="col">
+				<label for="telefono" class="form-label">Telefono</label>
+				<input type="number" class="form-control" id="telefono">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Guardar</button>
+		</form>
+
+
+	</div>
+
+
+
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
