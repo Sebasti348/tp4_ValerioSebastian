@@ -2,23 +2,24 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Alumno {
 	private String nombre;
 	private String apellido;
 	private String email;
-	private int telefono;
+	private String telefono;
 	private LocalDate fec_nac;
 	private String domicilio;
 	private int lu;
-	
+	private boolean estado;
 	
 	public Alumno() {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Alumno(String nombre, String apellido, String email, int telefono, LocalDate fec_nac, String domicilio,
-			int lu) {
+	public Alumno(String nombre, String apellido, String email, String telefono, LocalDate fec_nac, String domicilio,
+			int lu, boolean estado) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -27,6 +28,7 @@ public class Alumno {
 		this.fec_nac = fec_nac;
 		this.domicilio = domicilio;
 		this.lu = lu;
+		this.estado = estado;
 	}
 
 
@@ -59,13 +61,12 @@ public class Alumno {
 		this.email = email;
 	}
 
-
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
@@ -98,13 +99,27 @@ public class Alumno {
 	public void setLu(int lu) {
 		this.lu = lu;
 	}
+	
+	
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 
 
 	@Override
 	public String toString() {
 		return "Alumno [nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono
-				+ ", fec_nac=" + fec_nac + ", domicilio=" + domicilio + ", lu=" + lu + "]";
+				+ ", fec_nac=" + fec_nac + ", domicilio=" + domicilio + ", lu=" + lu + ", estado=" + estado + "]";
 	}
+
+
+	
 	
 	
 	

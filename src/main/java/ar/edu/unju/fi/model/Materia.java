@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Materia {
 	private String nombre;
 	private String curso;
@@ -7,12 +10,16 @@ public class Materia {
 	private String modalidad;
 	private Docente docente;
 	private Carrera carrera;
+	private boolean estado;
 	
 	public Materia() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Materia(String nombre, String curso, int cant_hs, String modalidad, Docente docente, Carrera carrera) {
+	
+
+	public Materia(String nombre, String curso, int cant_hs, String modalidad, Docente docente, Carrera carrera,
+			boolean estado) {
 		super();
 		this.nombre = nombre;
 		this.curso = curso;
@@ -20,7 +27,22 @@ public class Materia {
 		this.modalidad = modalidad;
 		this.docente = docente;
 		this.carrera = carrera;
+		this.estado = estado;
 	}
+	
+
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
+
 
 	public String getNombre() {
 		return nombre;
@@ -70,11 +92,15 @@ public class Materia {
 		this.carrera = carrera;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Materia [nombre=" + nombre + ", curso=" + curso + ", cant_hs=" + cant_hs + ", modalidad=" + modalidad
-				+ ", docente=" + docente + ", carrera=" + carrera + "]";
+				+ ", docente=" + docente + ", carrera=" + carrera + ", estado=" + estado + "]";
 	}
+
+	
 	
 	
 	

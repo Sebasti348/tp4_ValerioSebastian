@@ -7,36 +7,40 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div data-th-replace="~{fragments/header::navbar}">
+	
+	</div>
 	<h1 class="d-flex justify-content-center">Formulario Docente</h1>
 	
 	<div class="d-flex justify-content-center">
-		<form>
+		<form data-th-object="${nuevoDocente}" data-th-action="@{/guardarDocente}" method="post">
 			<div class="col	" >
-				<label for="legajo" class="form-label"> Legajo </label> <input
+				<label for="legajo" class="form-label"> Legajo </label> 
+				<input
 					type="number" class="form-control" id="legajo"
-					aria-describedby="legajo">
+					aria-describedby="legajo" data-th-field="*{legajo}">
 
 			</div>
 			<div class="col">
 				<label for="nombre" class="form-label">Nombre Completo</label> 
-				<input	type="text" class="form-control" id="nombre" aria-describedby="nombre">
+				<input	type="text" class="form-control" id="nombre" aria-describedby="nombre" data-th-field="*{nombre}">
 
 			</div>
 			<div class="col">
 				<label for="apellido" class="form-label">Apellidos</label> <input
 					type="text" class="form-control" id="apellido"
-					aria-describedby="apellido">
+					aria-describedby="apellido" data-th-field="*{apellido}">
 
 			</div>
 			<div class="col">
 				<label for="email" class="form-label">Email </label> <input
 					type="email" class="form-control" id="email"
-					aria-describedby="email">
+					aria-describedby="email" data-th-field="*{email}">
 
 			</div>
 			<div class="col">
 				<label for="telefono" class="form-label">Telefono</label>
-				<input type="number" class="form-control" id="telefono">
+				<input type="number" class="form-control" id="telefono" data-th-field="*{telefono}">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Guardar</button>
