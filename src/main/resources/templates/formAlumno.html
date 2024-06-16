@@ -15,48 +15,50 @@ data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
 	<!-- d-flex justify-content-center -->
 	<div class="container" >
 	 
-		<form data-th-object="${nuevoAlumno}" data-th-action="@{/guardarAlumno}" method="post" class="row">
+		<form data-th-object="${nuevoAlumno}" data-th-action="${flag}?@{/modificarAlumno}:@{/guardarAlumno}" method="post" class="row">
 			<div >
 				<label for="nombre" class="form-label text-white">Nombre Completo</label> <input type="text" class="form-control col-4"
 					id="nombre" aria-describedby="nombre" data-th-field="*{nombre}" placeholder="Ingrese nombre">
 			</div >
 			
-						<div class="col">
+						<div class="col-6">
 				<label for="apellido" class="form-label text-white">Apellido</label> <input type="text" class="form-control col-4"
 					id="apellido" aria-describedby="apellido" data-th-field="*{apellido}">
 			</div>
-						<div class="col">
+						<div class="col-6">
 				<label for="email" class="form-label text-white">Email
 					</label> <input type="email" class="form-control"
 					id="email" aria-describedby="email" data-th-field="*{email}">
 			</div>
-						<div class="col">
+						<div class="col-6">
 				<label for="telefono" class="form-label text-white">Telefono</label> <input type="number" class="form-control col-4"
 					id="telefono" aria-describedby="telefono" data-th-field="*{telefono}">
 			</div>
-						<div class="col">
+						<div class="col-6">
 				<label for="fec_nac" class="form-label text-white">Fecha de nacimiento </label> <input type="date" class="form-control col-4"
 					id="fec_nac" aria-describedby="fec_nac" data-th-field="*{fec_nac}">
 			</div>
-						<div class="col">
+						<div class="col-6">
 				<label for="domicilio" class="form-label text-white">Domicilio</label> <input type="text" class="form-control col-4"
 					id="domicilio" aria-describedby="domicilio" data-th-field="*{domicilio}">
 			</div>
-						<div class="col">
+						<div class="col-6">
 				<label for="lu" class="form-label text-white">Libreta Universitaria</label> <input type="number" class="form-control"
-					id="lu" aria-describedby="lu" data-th-field="*{lu}">
+					id="lu" aria-describedby="lu" data-th-field="*{lu}" data-th-readonly=${flag}>
 			</div>
 			<hr>
 			<br><br>	
-			<div class=" d-flex justify-content-center">
+			<div class=" d-flex justify-content-center bg-white" >
 					<button type="submit" class="btn btn-light">Guardar Alumno</button>
 				</div>
 			
 			
 		</form>
-		
-		
-				
+	<hr>
+
+	</div>
+		<div data-th-replace="~{fragments/footer::footer}">
+	
 	</div>
 		<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
 	

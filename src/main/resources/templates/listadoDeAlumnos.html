@@ -11,7 +11,7 @@ data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
 	<div data-th-replace="~{fragments/header::navbar}">
 	
 	</div>	
-	<div class="container p-3 m-2">
+	<div class="container p-2 m-2 " >
 		<table class="table" >
 		<thead>
 			<tr>
@@ -35,10 +35,18 @@ data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
 				<td data-th-text="${alumno.fec_nac}"></td>
 				<td data-th-text="${alumno.domicilio}"></td>
 				<td data-th-text="${alumno.lu}"></td>
+				<td>
+						<a data-th-href="@{'/eliminarAlumno/'+${alumno.lu}}" class="btn btn-danger">Borrar</a>				
+						<a data-th-href="@{'/modificarAlumno/'+${alumno.lu}}" class="btn btn-warning">Modificar</a>
+						
+				</td>
 				
 			</tr>
 		</tbody>
 	</table>
+	</div>
+			<div data-th-replace="~{fragments/footer::footer}">
+	
 	</div>
 			<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
 	

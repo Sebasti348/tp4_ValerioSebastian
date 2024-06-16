@@ -18,7 +18,7 @@ public class ListadoAlumnos {
 		
 		//Metodo para buscar alumno por lu
 
-		public static Alumno buscarCarreraPorCodigo (int libretau) {
+		public static Alumno buscarAlumnoPorLu (int libretau) {
 			for(Alumno a : alumnos) {
 				if(a.getLu()== libretau) {
 				return a;
@@ -49,16 +49,13 @@ public class ListadoAlumnos {
 			  // Método para eliminar un alumno
 			  public static void eliminarAlumno(int libretau) {
 				  //borrado físico
-			    //alumnos.removeIf(alumno -> alumno.getlu==libretau);
+			    alumnos.removeIf(alumno -> alumno.getLu()==libretau);
 				  
 				  //borrado lógico
-				  for (int i = 0; i < alumnos.size(); i++) {
-				      Alumno alumno = alumnos.get(i);
-				      if (alumno.getLu()==libretau) {
-				        alumno.setEstado(false);;
-				        break;
-				      }
-				    }
+					/*
+					 * for (int i = 0; i < alumnos.size(); i++) { Alumno alumno = alumnos.get(i); if
+					 * (alumno.getLu()==libretau) { alumno.setEstado(false);; break; } }
+					 */
 
 		}
 

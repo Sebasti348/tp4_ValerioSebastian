@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unju.fi.collections.ListadoAlumnos;
+
 import ar.edu.unju.fi.model.Alumno;
+
 
 
 @Controller
@@ -28,11 +30,18 @@ public class AlumnoController {
 		return modelView;
 	}
 	
+	@GetMapping("/listadoAlumnos")
+	public ModelAndView getFormListaAlumnos() {
+		ModelAndView modelView = new ModelAndView("listadoDeAlumnos");
+		modelView.addObject("listadoAlumnos", ListadoAlumnos.listarAlumnos());
+		return modelView;
+	}
+	
 
 	@PostMapping("/guardarAlumno")
 	public ModelAndView saveAlumno( @ModelAttribute("nuevoAlumno") Alumno alumnoParaGuardar) {
 
-		//guardar
+			//guardar
 		ListadoAlumnos.agregarAlumno(alumnoParaGuardar);
 		//mostrar el listado
 		ModelAndView modelView 	= new ModelAndView("listadoDeAlumnos");
@@ -41,17 +50,36 @@ public class AlumnoController {
 		return modelView;		
 	}
 	
+	
 	@GetMapping("/eliminarAlumno/{lu}")
-	public ModelAndView deleteAlumnoDelListado(@PathVariable (name="codigo") int libretau) {
+	public ModelAndView deleteAlumnoDelListado(@PathVariable (name="lu") int lu) {
 		
 		//borrar
-		ListadoAlumnos.eliminarAlumno(libretau);
+		ListadoAlumnos.eliminarAlumno(lu);
 		
 		//mostrar nueva lista de alumnos
-		ModelAndView modelView = new ModelAndView("listadoDeAlumnos");
+		ModelAndView modelView = new ModelAndView("listadoDeAlumno");
 		modelView.addObject("listadoAlumnos",ListadoAlumnos.listarAlumnos());
 		
 		 return modelView;
+	}
+	
+	@GetMapping("/modificarAlumno/{lu}")
+	public ModelAndView getFormAlumnoCarrera(@PathVariable(name="lu") int lu) {
+		Alumno alumno = ListadoAlumnos.buscarAlumnoPorLu(lu);
+		ModelAndView modelView = new ModelAndView("formAlumno");
+		modelView.addObject("nuevoAlumno", alumno); 
+		modelView.addObject("flag", true);
+		return modelView;
+		
+	}
+	
+	@PostMapping("/modificarAlumno")
+	public ModelAndView modifcarAlumno (@ModelAttribute("nuevoAlumno")Alumno alumnoModificado) {
+		ListadoAlumnos.modificarAlumno(alumnoModificado);
+		ModelAndView modelView =new ModelAndView("listadoDeAlumnos");
+		modelView.addObject("listadoAlumnos", ListadoAlumnos.listarAlumnos());
+		return modelView;
 	}
 	
 
