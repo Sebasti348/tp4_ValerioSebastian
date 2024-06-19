@@ -43,7 +43,7 @@ public class ListadoAlumnos {
 			        alumnos.set(i, alumnoModificado);
 			        break;
 			      }
-			    }
+			    }  
 			  }
 
 			  // Método para eliminar un alumno

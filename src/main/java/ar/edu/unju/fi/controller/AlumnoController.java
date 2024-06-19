@@ -63,7 +63,7 @@ public class AlumnoController {
 		
 		 return modelView;
 	}
-	
+	  
 	@GetMapping("/modificarAlumno/{lu}")
 	public ModelAndView getFormAlumnoCarrera(@PathVariable(name="lu") int lu) {
 		Alumno alumno = ListadoAlumnos.buscarAlumnoPorLu(lu);
