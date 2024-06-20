@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div data-th-replace="~{fragments/header::navbar}" class="m-4 p-3">
+	
+	</div>
+	<br>
+	<div class="container d-flex">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col">Codigo</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Cantidad de Anios</th>
+				<th scope="col">Estado</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-th-each="carrera : ${listadoCarreras}">
+				<th data-th-text="${carrera.codigo}"></th>
+				<td data-th-text="${carrera.nombre}"></td>
+				<td data-th-text="${carrera.cant_anios}"></td>
+				<td data-th-text="${carrera.estado}"></td>
+					<td>
+						<a data-th-href="@{'/eliminarCarrera/'+${carrera.codigo}}" class="btn btn-danger">Borrar</a>				
+						<a data-th-href="@{'/modificarCarrera/'+${carrera.codigo}}" class="btn btn-warning">Modificar</a>
+						
+					</td>
+				
+			</tr>
+			
+		</tbody>
+	</table>
+	
+	</div>
+	<br>
+		<div data-th-replace="~{fragments/footer::footer}">
+	
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

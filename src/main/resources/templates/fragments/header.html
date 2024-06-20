@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>header</title>
 </head>
 <body>
@@ -16,23 +16,51 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="./index">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Acerca de </a>
+          <a class="nav-link active" aria-current="page" href="#">Acerca de</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Carreras
           </a>
           <ul class="dropdown-menu">
-          	<li><a class="dropdown-item" href="#">APU</a></li>
-            <li><a class="dropdown-item" href="#">Informatica</a></li>
-            <li><a class="dropdown-item" href="#">Minas</a></li>
-            <li><a class="dropdown-item" href="#">Quimica</a></li>
+          	<li><a class="dropdown-item" href="./formularioCarrera">Agregar Carrera</a></li>
+            <li><a class="dropdown-item" href="/listadoCarreras">Carreras existentes</a></li>
+
           </ul>
         </li>
-        <li class="nav-item">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false"> Alumnos </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="./formularioAlumno">Matricularse</a></li>
+							<li><a class="dropdown-item" href="./listadoAlumnos">Alumnos Matriculados</a></li>
+
+						</ul></li>
+		        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Docentes
+          </a>
+          <ul class="dropdown-menu">
+          	<li><a class="dropdown-item" href="./formularioDocente">Agregar Docente</a></li>
+            <li><a class="dropdown-item" href="./listaDocentes">Docentes existentes</a></li>
+
+          </ul>
+        </li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false"> Materias </a>
+						<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="./formularioMateria">Agregar Materia</a></li>
+							<li><a class="dropdown-item" href="./listadoMaterias">Materias</a></li>
+							
+							
+
+						</ul>
+					</li>
+					<li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Noticias</a>
         </li>
          <li class="nav-item">
@@ -48,6 +76,7 @@
 	
 	
 	</nav>
+	
 
 </body>
 </html>
