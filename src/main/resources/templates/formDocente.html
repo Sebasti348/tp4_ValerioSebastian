@@ -13,12 +13,12 @@
 	<h1 class="d-flex justify-content-center">Formulario Docente</h1>
 	
 	<div class="d-flex justify-content-center">
-		<form data-th-object="${nuevoDocente}" data-th-action="@{/guardarDocente}" method="post">
+		<form data-th-object="${nuevoDocente}" data-th-action="${flag}?@{/modificarDocente}:@{/guardarDocente}" method="post">
 			<div class="col	" >
 				<label for="legajo" class="form-label"> Legajo </label> 
 				<input
 					type="number" class="form-control" id="legajo"
-					aria-describedby="legajo" data-th-field="*{legajo}">
+					aria-describedby="legajo" data-th-field="*{legajo}" data-th-readonly=${flag}>
 
 			</div>
 			<div class="col">
